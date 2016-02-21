@@ -1,3 +1,23 @@
 <template name="workout">
-    Workout
+    <div class = "container">
+        <header>
+            <h1>Lifts</h1>
+            <form class="new-lift">
+                <input type = 'text' name = 'lift' placeholder="Add New Lift">
+                <input type = 'submit' value="Submit">
+            </form>
+        </header>
+        <ul>
+            {{#each workouts}}
+                {{> WorkOutList}}
+            {{/each}}
+    </ul>
+    </div>
+</template>
+
+<template name="WorkOutList">
+    <li>
+        {{lift}}
+        <button class="delete">Be weak</button>
+    </li>
 </template>
